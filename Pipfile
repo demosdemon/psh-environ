@@ -1,0 +1,32 @@
+[[source]]
+"name" = "pypi"
+"url" = "https://pypi.org/simple"
+"verify_ssl" = true
+
+[packages]
+"path.py" = "*"
+
+[dev-packages]
+"bandit" = "*"
+"black" = "*"
+"bumpversion" = "*"
+"flake8" = "*"
+"flake8-bugbear" = "*"
+"flake8-builtins" = "*"
+"flake8-comprehensions" = "*"
+"format-pipfile" = "*"
+"ipdb" = "*"
+"ipython" = "*"
+"isort" = "*"
+"psh-environ" = {editable = true,path = "."}
+"pytest" = "*"
+"pytest-clarity" = "*"
+"pytest-click" = "*"
+"pytest-cov" = "*"
+
+[requires]
+# for development dependencies
+python_version = "3.7"
+
+[pipenv]
+allow_prereleases = true
