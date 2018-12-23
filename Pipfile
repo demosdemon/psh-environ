@@ -4,6 +4,7 @@
 "verify_ssl" = true
 
 [packages]
+"colander" = "*"
 "path.py" = "*"
 
 [dev-packages]
