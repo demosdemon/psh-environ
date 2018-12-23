@@ -4,8 +4,6 @@
 "verify_ssl" = true
 
 [packages]
-"colander" = "*"
-"path.py" = "*"
 
 [dev-packages]
 "bandit" = "*"
@@ -19,11 +17,12 @@
 "ipdb" = "*"
 "ipython" = "*"
 "isort" = "*"
-"psh-environ" = {editable = true,path = "."}
+psh-environ = {editable = true,path = "."}
 "pytest" = "*"
 "pytest-clarity" = "*"
 "pytest-click" = "*"
 "pytest-cov" = "*"
+pre-commit = "*"
 
 [requires]
 # for development dependencies
