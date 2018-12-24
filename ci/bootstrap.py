@@ -87,11 +87,9 @@ def load_matrix(file_path=None):
 
     # resolve $ref
     data = resolve(data)
-    data.pop("matrix")  # we don't need this anymore after $ref resolution
-    environments = data.pop("environments")
     rv = {}
 
-    for env in environments:
+    for env in data["environments"]:
         label = env.pop("label", None)
         matrix = env.pop("matrix", {})
 
@@ -108,14 +106,14 @@ def load_matrix(file_path=None):
             environment.update({k: v.value for k, v in combination.items()})
             rv[name] = environment
 
-    return rv, data
+    return rv
 
 
 def main():
     base_path = path.Path(__file__).dirname().dirname()
     print(("Project path: {}".format(base_path)))
 
-    environments, extra = load_matrix(base_path / ".matrix.yml")
+    environments = load_matrix(base_path / ".matrix.yml")
     template_path = base_path / "ci" / "templates"
     templates = template_path.listdir()
 
@@ -123,13 +121,7 @@ def main():
         root, _ = tpl_path.basename().splitext()
 
         tpl = mako.template.Template(filename=str(tpl_path))
-
-        kwargs = {"environments": environments}
-
-        if root in extra:
-            kwargs.update(extra[root])
-
-        contents = tpl.render(**kwargs).rstrip()
+        contents = tpl.render(environments=environments).rstrip()
         with open(base_path / root, "w") as fp:
             fp.write(contents + "\n")
 
