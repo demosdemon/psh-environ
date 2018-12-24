@@ -65,10 +65,11 @@ commands = coverage erase
 % if env.startswith("check"):
 skip_install = true
 commands =
-    bandit --recursive --aggregate file --verbose setup.py format_pipfile
-    flake8 setup.py format_pipfile
-    black --verbose --check --diff setup.py format_pipfile
-    isort --verbose --check-only --diff --recursive setup.py format_pipfile
+    # do not add tests to bandit
+    bandit --recursive --aggregate file --verbose setup.py ci psh_environ
+    flake8 setup.py ci psh_environ tests
+    black --verbose --check --diff setup.py ci psh_environ tests
+    isort --verbose --check-only --diff --recursive setup.py ci psh_environ tests
 % endif
 % if config.get("env_vars"):
 setenv =
