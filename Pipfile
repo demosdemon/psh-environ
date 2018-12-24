@@ -4,7 +4,6 @@
 "verify_ssl" = true
 
 [packages]
-"requests" = "*"
 "simplejson" = "*"
 
 [dev-packages]
