@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import binascii
+import sys
 
 import pytest
 import simplejson as json
@@ -13,7 +14,14 @@ from psh_environ.decoder import decode_base64_json
         ("e30=", {}),
         (None, None),
         pytest.param(
-            "invalid string", None, marks=pytest.mark.xfail(raises=binascii.Error)
+            "invalid string",
+            None,
+            marks=(
+                pytest.mark.xfail(condition=sys.version_info[0] == 2, raises=TypeError),
+                pytest.mark.xfail(
+                    condition=sys.version_info[0] == 3, raises=binascii.Error
+                ),
+            ),
         ),
         pytest.param(
             "aW52YWxpZCBzdHJpbmc=",
