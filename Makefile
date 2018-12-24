@@ -7,7 +7,7 @@ VIRTUAL_ENV := $(CURDIR)/.venv
 endif
 
 PYTHON ?= $(VIRTUAL_ENV)/bin/python
-python_code := psh_environ tests
+python_code := psh_environ ci tests
 
 help:
 	@echo 'Usage: make <target>'
@@ -37,6 +37,7 @@ clean:
 	git clean -xdf -e .env -e .venv
 
 format: format-pipfile $(PYTHON)
+	$(PYTHON) ci/bootstrap.py
 	$(PYTHON) -m isort --recursive $(python_code)
 	$(PYTHON) -m black $(python_code)
 

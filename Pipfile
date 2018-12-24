@@ -14,15 +14,17 @@
 "flake8-builtins" = "*"
 "flake8-comprehensions" = "*"
 "format-pipfile" = "*"
+"inflection" = "*"
 "ipdb" = "*"
 "ipython" = "*"
 "isort" = "*"
-psh-environ = {editable = true,path = "."}
+"mako" = "*"
+"pre-commit" = "*"
+"psh-environ" = {editable = true,path = "."}
 "pytest" = "*"
 "pytest-clarity" = "*"
 "pytest-click" = "*"
 "pytest-cov" = "*"
-pre-commit = "*"
 
 [requires]
 # for development dependencies
