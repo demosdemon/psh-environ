@@ -70,13 +70,11 @@ commands = coverage erase
 [testenv:${env}]
 % if env.startswith("check"):
 skip_install = true
-commands =
-    # do not add tests to bandit
-    # Ignore B702 "use_of_mako_templates", as our templates are not for HTML
-    bandit --recursive --skip B702 --aggregate file --verbose setup.py ci psh_environ
-    flake8 setup.py ci psh_environ tests
-    black --verbose --check --diff setup.py ci psh_environ tests
-    isort --verbose --check-only --diff --recursive setup.py ci psh_environ tests
+commands =<% python_files = "setup.py ci psh_environ tests" %>
+    bandit --configfile=bandit.yml --recursive --skip B702 --aggregate file ${python_files}
+    flake8 ${python_files}
+    black --verbose --check --diff ${python_files}
+    isort --verbose --check-only --diff --recursive ${python_files}
 % endif
 % if config.get("env_vars"):
 setenv =
