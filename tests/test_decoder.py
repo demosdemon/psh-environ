@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 import binascii
-import json
 
 import pytest
+import simplejson as json
 from psh_environ.decoder import decode_base64_json
 
 

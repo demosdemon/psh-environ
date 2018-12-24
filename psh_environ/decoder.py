@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import base64
-import json
+
+import simplejson as json
 
 
 def decode_base64_json(string):

@@ -14,7 +14,6 @@ passenv =
     *
 deps =
     pytest
-    pytest-click
 
 [testenv:docs]
 deps =
