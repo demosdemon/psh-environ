@@ -21,7 +21,7 @@ matrix:
         env, config = pair
         return (
             env.startswith("py"),
-            config.get("cover", True),
+            not config.get("cover", True),
             env,
         )
 %>

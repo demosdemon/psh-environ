@@ -25,23 +25,6 @@ matrix:
         - TOXENV=check-py37
     - python: "2.7"
       env:
-        - TOXENV=py27-nocov
-    - python: "3.4"
-      env:
-        - TOXENV=py34-nocov
-    - python: "3.5"
-      env:
-        - TOXENV=py35-nocov
-    - python: "3.6"
-      env:
-        - TOXENV=py36-nocov
-    - python: "3.7"
-      dist: xenial
-      sudo: required
-      env:
-        - TOXENV=py37-nocov
-    - python: "2.7"
-      env:
         - TOXENV=py27-cover,report,coveralls,codecov,ocular
     - python: "3.4"
       env:
@@ -57,6 +40,23 @@ matrix:
       sudo: required
       env:
         - TOXENV=py37-cover,report,coveralls,codecov,ocular
+    - python: "2.7"
+      env:
+        - TOXENV=py27-nocov
+    - python: "3.4"
+      env:
+        - TOXENV=py34-nocov
+    - python: "3.5"
+      env:
+        - TOXENV=py35-nocov
+    - python: "3.6"
+      env:
+        - TOXENV=py36-nocov
+    - python: "3.7"
+      dist: xenial
+      sudo: required
+      env:
+        - TOXENV=py37-nocov
 
 before_install:
   - python --version
