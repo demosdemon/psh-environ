@@ -71,8 +71,8 @@ commands = coverage erase
 % if env.startswith("check"):
 skip_install = true
 commands =<% python_files = "setup.py ci psh_environ tests" %>
-    bandit --configfile=bandit.yml --recursive --skip B702 --aggregate file ${python_files}
-    flake8 ${python_files}
+    bandit --verbose --configfile=bandit.yml --recursive --aggregate file ${python_files}
+    flake8 --verbose ${python_files}
     black --verbose --check --diff ${python_files}
     isort --verbose --check-only --diff --recursive ${python_files}
 % endif
