@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import binascii
-import sys
+import sys  # noqa
 
 import pytest
 import simplejson as json
@@ -17,9 +17,11 @@ from psh_environ.decoder import decode_base64_json
             "invalid string",
             None,
             marks=(
-                pytest.mark.xfail(condition=sys.version_info[0] == 2, raises=TypeError),
                 pytest.mark.xfail(
-                    condition=sys.version_info[0] == 3, raises=binascii.Error
+                    condition="sys.version_info < (3, 0)", raises=TypeError
+                ),
+                pytest.mark.xfail(
+                    condition="sys.version_info >= (3, 0)", raises=binascii.Error
                 ),
             ),
         ),
