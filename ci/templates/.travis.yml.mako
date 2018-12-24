@@ -98,5 +98,3 @@ notifications:
   email:
     on_success: never
     on_failure: change
-
-<%def name="secure(secret)">secure: ${secrets[secret]}</%def>
