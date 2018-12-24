@@ -78,7 +78,7 @@ def load_matrix(file_path=None):
         file_path = path.Path("./.matrix.yml")
 
     with open(file_path) as fp:
-        data = yaml.load(fp)
+        data = yaml.safe_load(fp)
 
     data["matrix"] = {
         name: [Entry.from_value(value) for value in options]
