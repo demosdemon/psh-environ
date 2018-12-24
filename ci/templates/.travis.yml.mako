@@ -94,7 +94,7 @@ deploy:
     secure: "HWnCM36GfIjpSnD2ikBwVTRIQS/4sNG798YUPTPEdFER4KM7PzMMLyUuFN5SppVZXF+21xwTOdcxNlBVaKpZyD+jzTbWHgao3SiuG6ARThCz38i6UZXPIJBWnv639tRf2Kz8wE/OuSS1vvnhjGVjWOpqrpsGbfu0RZy/6+eLwQkcv4oFxzHQ+KTexeFJ7effnpM/EF1eSEXa9BhULP/fLnv2qsXNMZCpQY6h7dmdlJgR3ykF9cz3NnYFefiTgXwgsmINPymRUNzZQKn970mZgzKh7uhBzpFhMNaEZKam8auchAJO1PKfEWhOkbAzW3L96Rp9PmYj6jOjIXD+jN6ceIBHxfBQ06blijlRp86rtl8vQOTbn7GKyvY+n8yPm99pGqxVu/ch0kWI1Sk3RQr/y0zBLqsdPtPtGW1pZm/1C9h9B2xd/yt0y7aJZ8/xOblgIeOQHPbDQQeNjd6mu63CnRWR7kpvDgGYjhVnVlPZj09+in1HqWixe15BmgIrYheUt/IWCMnlbGuiPLWyT46Avm4IAmuxUjB84zH06Xq0N+yrV1fSFwz1hOk/YzAMUinHGlB4NKPi8Wk/IuaH5eqVVa67wNN4DFoETvfGF7aOsjLppYmyBKkTVCB69w/K9SJZmqkn99mNzaTBgepI4lsS+exSGyCOkgBT0H0E5lSz26c="
   on:
     tags: true
-    branch: master
+    condition: '$TOXENV = *"-nocov"'
 
 notifications:
   email:
