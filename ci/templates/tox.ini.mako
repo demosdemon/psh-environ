@@ -50,7 +50,6 @@ deps =
     codacy-coverage
 skip_install = true
 commands =
-    coverage xml --ignore-errors
     python-codacy-coverage -r coverage.xml
 
 [testenv:report]
