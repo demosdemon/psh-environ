@@ -66,7 +66,8 @@ commands = coverage erase
 skip_install = true
 commands =
     # do not add tests to bandit
-    bandit --recursive --aggregate file --verbose setup.py ci psh_environ
+    # Ignore B702 "use_of_mako_templates", as our templates are not for HTML
+    bandit --recursive --skip B702 --aggregate file --verbose setup.py ci psh_environ
     flake8 setup.py ci psh_environ tests
     black --verbose --check --diff setup.py ci psh_environ tests
     isort --verbose --check-only --diff --recursive setup.py ci psh_environ tests
