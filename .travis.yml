@@ -116,7 +116,7 @@ deploy:
   password:
     secure: "HYFvn0wXmquYRxuWoWEehSNXo6U0Z5Mr/BbJzPIhm/A/7/8z/LWSVsJSFdvIiHEFQXboXrVF+sniG5Ot9qNW5txPREoqz2XPaWBphbfiBQTRQ3zCIZZQR2QNqwFOEJ5lbCa/gh2v+XG0qDzgR8E/7uZMEu40gXfXOktPu8/mMrW0b47wuB3EaSArz79iQOWyfffKCOwse8l9D0644+SbEOOcALCmJsLGiAIuKV+TWmzQ/We60liIUvsv1FVBh9nLky6DTmPbQXQHUnRglaf903rybNwmU7xZP0hvoiG2iOfFjPvyJy3h7T6wtWr2Z1j/7pci7/Zw2473AZe91ZjTPGd7GekaLXeBLxxG+0KbdedlmLvs0XlIlXeFUWSe4UzHSbCqD15MxdVRZ/pmYs3nbxS+h17Q+fukSJh0spnxNjgAO4F2emwu/XNGowBNrzngWT8qfUceAFIVtYKUcbJUpwZgxF0+wFpxmcCncgF0seA4jLUF1zLxikx65LNHd7LZ8gBgAZgzLo/YMxSfv6QnJjAB0XwjEd9XvRppUxhxnWPh7Ct7zV1FhPconF2tuoAmcZ8L1ok8suOHdAqzXec48DsXluDR0nxkHxgFtXshFTatp/XRnfRi7qxykXTe3Tl+uJ9bNZFM/CFoCPVTbS6H6akIEUI4bA0hTu9oacCbTpk="
   on:
-    # tags: true
+    tags: true
     condition: '$TOXENV = *"-nocov"'
 
 notifications:
