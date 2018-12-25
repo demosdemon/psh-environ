@@ -95,8 +95,8 @@ Provide environment hooks for Python Platform.sh projects.
     :alt: Python Implementation
 
 .. |commits-since|
-    image:: https://img.shields.io/github/commits-since/demosdemon/psh-environ/v0.0.1.svg
-    :target: https://github.com/demosdemon/psh-environ/compare/v0.0.1...master
+    image:: https://img.shields.io/github/commits-since/demosdemon/psh-environ/v0.0.2.svg
+    :target: https://github.com/demosdemon/psh-environ/compare/v0.0.2...master
     :alt: Commits since latest release
 
 .. end-badges
